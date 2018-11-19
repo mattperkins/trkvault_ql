@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "DORMshed",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "standard": "^12.0.1"
+  }
 }
