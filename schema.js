@@ -34,7 +34,7 @@ const RootQuery = new GraphQLObjectType({
     playlists: {
       type: new GraphQLList(PlaylistType),
       resolve (parent, args) {
-        return axios.get('https://api.trkvault.libtrig.com/')
+        return axios.get('https://api.trkvault.libtrig.com/playlists/')
           .then(res => res.data)
       }
     },
@@ -44,7 +44,7 @@ const RootQuery = new GraphQLObjectType({
         id: { type: GraphQLString }
       },
       resolve (parent, args) {
-        return axios.get(`https://api.trkvault.libtrig.com/${args.id}`)
+        return axios.get(`https://api.trkvault.libtrig.com/playlists/${args.id}`)
           .then(res => res.data)
       }
     }
