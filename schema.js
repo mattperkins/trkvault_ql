@@ -5,9 +5,8 @@ const { GraphQLObjectType, GraphQLString, GraphQLList, GraphQLSchema } = require
 const PlaylistType = new GraphQLObjectType({
   name: 'Playlist',
   fields: () => ({
-    id: { type: GraphQLString },
-    name: { type: GraphQLString },
-    genre: { type: GraphQLString },
+    playlist_number: { type: GraphQLString },
+    playlist_title: { type: GraphQLString },
     track: { type: TrackType }
   })
 })
@@ -16,13 +15,14 @@ const PlaylistType = new GraphQLObjectType({
 const TrackType = new GraphQLObjectType({
   name: 'Track',
   fields: () => ({
-    id: { type: GraphQLString },
-    name: { type: GraphQLString },
-    year: { type: GraphQLString },
-    composer: { type: GraphQLString },
+    track_number: { type: GraphQLString },
+    track_title: { type: GraphQLString },
+    duration: { type: GraphQLString },
     genre: { type: GraphQLString },
+    composer: { type: GraphQLString },
+    year_recorded: { type: GraphQLString },
     instrumental: { type: GraphQLString },
-    playlist: { type: PlaylistType }
+    playlist_title: { type: PlaylistType }
   })
 })
 
@@ -35,6 +35,16 @@ const RootQuery = new GraphQLObjectType({
       type: new GraphQLList(PlaylistType),
       resolve (parent, args) {
         return axios.get('https://api.trkvault.libtrig.com/')
+          .then(res => res.data)
+      }
+    },
+    playlist: {
+      type: PlaylistType,
+      args: {
+        id: { type: GraphQLString }
+      },
+      resolve (parent, args) {
+        return axios.get(`https://api.trkvault.libtrig.com/${args.id}`)
           .then(res => res.data)
       }
     }
