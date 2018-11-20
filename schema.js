@@ -1,4 +1,5 @@
-import { GraphQLObjectType, GraphQLString } from 'graphql'
+const axios = require('axios')
+const { GraphQLObjectType, GraphQLString, GraphQLList, GraphQLSchema } = require('graphql')
 
 // Playlist Type
 const PlaylistType = new GraphQLObjectType({
@@ -23,4 +24,23 @@ const TrackType = new GraphQLObjectType({
     instrumental: { type: GraphQLString },
     playlist: { type: PlaylistType }
   })
+})
+
+// Root Query "Endpoint Resolvers" < resolve data
+const RootQuery = new GraphQLObjectType({
+  name: 'RootQuery',
+  fields: {
+    // GraphQL List
+    playlists: {
+      type: new GraphQLList(PlaylistType),
+      resolve (parent, args) {
+        return axios.get('https://api.trkvault.libtrig.com/')
+          .then(res => res.data)
+      }
+    }
+  }
+})
+
+module.exports = new GraphQLSchema({
+  query: RootQuery
 })
