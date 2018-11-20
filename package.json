@@ -5,7 +5,7 @@
   "author": "DORMshed",
   "scripts": {
     "start": "node server.js",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js -r esm"
   },
   "license": "MIT",
   "devDependencies": {
