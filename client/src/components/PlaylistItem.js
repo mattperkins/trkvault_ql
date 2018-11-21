@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ({ playlist: { playlistNumber, playlistTitle } }) {
+export default ({ playlist: { playlistNumber, playlistTitle } }) => {
   return (
     <React.Fragment>
       <h1>{ playlistNumber }</h1>
