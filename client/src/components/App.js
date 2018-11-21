@@ -1,6 +1,7 @@
 import * as React from 'react'
 import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Playlists from './playlists'
 
 const client = new ApolloClient({
@@ -11,7 +12,9 @@ class App extends React.Component {
   render () {
     return (
       <ApolloProvider client={client}>
-        <Playlists />
+        <Router>
+          <Route exact path='/' component={Playlists} />
+        </Router>
       </ApolloProvider>
     )
   }
