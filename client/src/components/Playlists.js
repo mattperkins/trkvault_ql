@@ -1,17 +1,7 @@
 import * as React from 'react'
-import gql from 'graphql-tag'
 import { Query } from 'react-apollo'
 import PlaylistItem from './PlaylistItem'
-
-const PLAYLISTS_QUERY = gql`
-  query PlaylistQuery {
-    playlists {
-      id
-      playlistNumber
-      playlistTitle
-    }
-  }
-`
+import { PLAYLISTS_QUERY } from '../queries/playlistQuery'
 
 export default () => (
   <React.Fragment>
