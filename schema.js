@@ -48,6 +48,23 @@ const RootQuery = new GraphQLObjectType({
         return axios.get(`http://localhost:3000/playlists/${args.playlist_number}`)
           .then(res => res.data)
       }
+    },
+    tracks: {
+      type: new GraphQLList(TrackType),
+      resolve (parent, args) {
+        return axios.get('http://localhost:3000/tracks')
+          .then(res => res.data)
+      }
+    },
+    track: {
+      type: TrackType,
+      args: {
+        track_number: { type: GraphQLString }
+      },
+      resolve (parent, args) {
+        return axios.get(`http://localhost:3000/tracks/${args.track_number}`)
+          .then(res => res.data)
+      }
     }
   }
 })
