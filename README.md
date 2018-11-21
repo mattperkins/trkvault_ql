@@ -4,14 +4,17 @@
 # RUN
 
 ## SERVER 
-### yarn server 
+### yarn server (nodemon) <<<
+#### yarn start (--production (node))
 
 # JSON-SERVER
-## json-server --watch db.json --port 6000
+## json-server --watch db.json --port 6000 <<<
 
 ## CLIENT
-### yarn start 
-
+### yarn dev (runs concurrently)
+#### yarn client 
+#### cd client && yarn start (default) <<<
+ 
 # ENDPOINTS 
 ## http://localhost:4000/graphql
 ## http://localhost:6000/playlists
