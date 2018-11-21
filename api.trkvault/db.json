@@ -1,0 +1,38 @@
+{
+  "playlists": [
+    {
+    "id": "1",
+    "playlist_number": "1",
+    "playlist_title": "playlist one"
+    },
+    {
+    "id": "2",
+    "playlist_number": "2",
+    "playlist_title": "playlist two"
+    }
+  ],
+  "tracks": [
+    {
+      "id": "1",
+      "track_number": "1",
+      "track_title": "track one",
+      "duration": "03.17",
+      "genre": "jazz",
+      "composer": "composer",
+      "year_recorded": "2016",
+      "instrumental": "yes",
+      "playlist_title": "playlist one"
+    },
+    {
+      "id": "2",
+      "track_number": "2",
+      "track_title": "track two",
+      "duration": "03.17",
+      "genre": "rock",
+      "composer": "composer",
+      "year_recorded": "2011",
+      "instrumental": "no",
+      "playlist_title": "playlist two"
+    }
+  ]
+}
