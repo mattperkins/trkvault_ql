@@ -1,11 +1,13 @@
 {
-  "name": "lemon_ql",
+  "name": "trkvault_ql",
   "version": "1.0.0",
   "main": "index.js",
   "author": "DORMshed",
   "scripts": {
     "start": "node server.js",
-    "server": "nodemon server.js -r esm"
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+"dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "license": "MIT",
   "devDependencies": {
