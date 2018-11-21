@@ -35,7 +35,7 @@ const RootQuery = new GraphQLObjectType({
     playlists: {
       type: new GraphQLList(PlaylistType),
       resolve (parent, args) {
-        return axios.get('http://localhost:6000/playlists')
+        return axios.get('http://localhost:2000/playlists')
           .then(res => res.data)
       }
     },
@@ -45,14 +45,14 @@ const RootQuery = new GraphQLObjectType({
         playlist_number: { type: GraphQLString }
       },
       resolve (parent, args) {
-        return axios.get(`http://localhost:6000/playlists/${args.playlist_number}`)
+        return axios.get(`http://localhost:2000/playlists/${args.playlist_number}`)
           .then(res => res.data)
       }
     },
     tracks: {
       type: new GraphQLList(TrackType),
       resolve (parent, args) {
-        return axios.get('http://localhost:6000/tracks')
+        return axios.get('http://localhost:2000/tracks')
           .then(res => res.data)
       }
     },
@@ -62,7 +62,7 @@ const RootQuery = new GraphQLObjectType({
         track_number: { type: GraphQLString }
       },
       resolve (parent, args) {
-        return axios.get(`http://localhost:6000/tracks/${args.track_number}`)
+        return axios.get(`http://localhost:2000/tracks/${args.track_number}`)
           .then(res => res.data)
       }
     }
