@@ -16,9 +16,12 @@
 #### cd client && yarn start (default) <<<
  
 # ENDPOINTS 
+### SERVER
 ## http://localhost:4000/graphql
+### JSON SERVER
 ## http://localhost:6000/playlists
 ## http://localhost:6000/tracks
+### CLIENT
 ## http://localhost:3000
 
 # API DATA
