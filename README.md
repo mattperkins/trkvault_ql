@@ -8,7 +8,7 @@
 #### yarn start (--production (node))
 
 # JSON-SERVER
-## json-server --watch db.json --port 6000 <<<
+## json-server --watch db.json --port 2000 <<<
 
 ## CLIENT
 ### yarn dev (runs concurrently)
@@ -19,8 +19,8 @@
 ### SERVER
 ## http://localhost:4000/graphql
 ### JSON SERVER
-## http://localhost:6000/playlists
-## http://localhost:6000/tracks
+## http://localhost:2000/playlists
+## http://localhost:2000/tracks
 ### CLIENT
 ## http://localhost:3000
 
