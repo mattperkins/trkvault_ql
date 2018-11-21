@@ -6,8 +6,8 @@ const PlaylistType = new GraphQLObjectType({
   name: 'Playlist',
   fields: () => ({
     id: { type: GraphQLString },
-    playlist_number: { type: GraphQLString },
-    playlist_title: { type: GraphQLString },
+    playlistNumber: { type: GraphQLString },
+    playlistTitle: { type: GraphQLString },
     track: { type: TrackType }
   })
 })
@@ -17,12 +17,12 @@ const TrackType = new GraphQLObjectType({
   name: 'Track',
   fields: () => ({
     id: { type: GraphQLString },
-    track_number: { type: GraphQLString },
-    track_title: { type: GraphQLString },
+    trackNumber: { type: GraphQLString },
+    trackTitle: { type: GraphQLString },
     duration: { type: GraphQLString },
     genre: { type: GraphQLString },
     composer: { type: GraphQLString },
-    year_recorded: { type: GraphQLString },
+    yearRecorded: { type: GraphQLString },
     instrumental: { type: GraphQLString },
     playlist: { type: PlaylistType }
   })
@@ -42,10 +42,10 @@ const RootQuery = new GraphQLObjectType({
     playlist: {
       type: PlaylistType,
       args: {
-        playlist_number: { type: GraphQLString }
+        playlistNumber: { type: GraphQLString }
       },
       resolve (parent, args) {
-        return axios.get(`http://localhost:2000/playlists/${args.playlist_number}`)
+        return axios.get(`http://localhost:2000/playlists/${args.playlistNumber}`)
           .then(res => res.data)
       }
     },
@@ -59,10 +59,10 @@ const RootQuery = new GraphQLObjectType({
     track: {
       type: TrackType,
       args: {
-        track_number: { type: GraphQLString }
+        trackNumber: { type: GraphQLString }
       },
       resolve (parent, args) {
-        return axios.get(`http://localhost:2000/tracks/${args.track_number}`)
+        return axios.get(`http://localhost:2000/tracks/${args.trackNumber}`)
           .then(res => res.data)
       }
     }
