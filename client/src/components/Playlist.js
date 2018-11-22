@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { Query } from 'react-apollo'
-import { Link } from 'react-router-dom'
-// import PlaylistItem from './PlaylistItem'
+import PlaylistItem from './PlaylistItem'
 import { PLAYLIST_QUERY } from '../queries/playlistQuery'
 
 export default (props) => {
@@ -19,9 +18,7 @@ export default (props) => {
           const { playlistTitle } = data.playlist
           return (
             <div className='wrapper'>
-              <p><Link to={`/`}>Home</Link></p>
-
-              <p>{playlistTitle}</p>
+              <PlaylistItem playlistTitle={playlistTitle} />
             </div>
           )
         }}
