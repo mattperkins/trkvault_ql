@@ -15,3 +15,9 @@
 
 ## DEPLOY (PRODUCTION BUILD)
 ### yarn build 
+
+
+### PATTERNS
+#### CSS
+##### 'Main' css in client root > style.css
+##### 'Scoped Component' css files where required. 
