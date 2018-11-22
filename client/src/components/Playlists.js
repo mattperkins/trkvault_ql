@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Query } from 'react-apollo'
-import PlaylistItem from './PlaylistItem'
-import { PLAYLISTS_QUERY } from '../queries/playlistQuery'
+import PlaylistsItem from './PlaylistsItem'
+import { PLAYLISTS_QUERY } from '../queries/playlistsQuery'
 
 export default () => (
   <React.Fragment>
@@ -15,7 +15,7 @@ export default () => (
           return <React.Fragment>
             {
               data.playlists.map(playlist => (
-                <PlaylistItem key={playlist.id} playlist={playlist} />
+                <PlaylistsItem key={playlist.id} playlist={playlist} />
               ))
             }
           </React.Fragment>
