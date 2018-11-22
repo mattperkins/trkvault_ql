@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default (props) => {
-  const { playlistTitle } = props
+export default ({ playlistTitle }) => {
   return (
     <div className='wrapper'>
       <div className='row'>
