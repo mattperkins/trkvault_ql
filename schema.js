@@ -42,10 +42,10 @@ const RootQuery = new GraphQLObjectType({
     playlist: {
       type: PlaylistType,
       args: {
-        playlistNumber: { type: GraphQLString }
+        id: { type: GraphQLString }
       },
       resolve (parent, args) {
-        return axios.get(`http://localhost:2000/playlists/${args.playlistNumber}`)
+        return axios.get(`http://localhost:2000/playlists/${args.id}`)
           .then(res => res.data)
       }
     },
@@ -59,10 +59,10 @@ const RootQuery = new GraphQLObjectType({
     track: {
       type: TrackType,
       args: {
-        trackNumber: { type: GraphQLString }
+        id: { type: GraphQLString }
       },
       resolve (parent, args) {
-        return axios.get(`http://localhost:2000/tracks/${args.trackNumber}`)
+        return axios.get(`http://localhost:2000/tracks/${args.id}`)
           .then(res => res.data)
       }
     }
