@@ -1,16 +1,17 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-export default ({ playlist: { playlistNumber, playlistTitle } }) => {
+export default () => {
   return (
     <div className='wrapper'>
       <div className='row'>
 
         <div className='col-1'>
-          <h1>{ playlistNumber }</h1>
+          <Link to={`/`}>Home</Link>
         </div>
 
         <div className='col-11'>
-          <h1>{ playlistTitle }</h1>
+          <p>/\</p>
         </div>
 
       </div>
