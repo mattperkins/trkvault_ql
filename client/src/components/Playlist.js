@@ -16,11 +16,19 @@ export default (props) => {
           if (error) console.log(error)
           /* console.log(data) */
           const { playlistTitle } = data.playlist
-          return (
-            <div className='wrapper'>
-              <PlaylistItem playlistTitle={playlistTitle} />
-            </div>
-          )
+          const { trackNumber, trackTitle, duration, genre, composer, yearRecorded, instrumental } = data.playlist.track
+          return <div className='wrapper'>
+            <PlaylistItem
+              playlistTitle={playlistTitle}
+              trackNumber={trackNumber}
+              trackTitle={trackTitle}
+              duration={duration}
+              genre={genre}
+              composer={composer}
+              yearRecorded={yearRecorded}
+              instrumental={instrumental}
+            />
+          </div>
         }}
       </Query>
     </React.Fragment>
