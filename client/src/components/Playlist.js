@@ -16,11 +16,12 @@ export default (props) => {
           if (loading) return <h4>Loading...</h4>
           if (error) console.log(error)
           /* console.log(data) */
+          const { playlistTitle } = data.playlist
           return (
             <div className='wrapper'>
               <p><Link to={`/`}>Home</Link></p>
 
-              <p>{data.playlist.playlistTitle}</p>
+              <p>{playlistTitle}</p>
             </div>
           )
         }}
