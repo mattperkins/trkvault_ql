@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default () => {
+export default (props) => {
+  const { playlistTitle } = props
   return (
     <div className='wrapper'>
       <div className='row'>
@@ -11,7 +12,7 @@ export default () => {
         </div>
 
         <div className='col-11'>
-          <p>/\</p>
+          <p>{playlistTitle}</p>
         </div>
 
       </div>
