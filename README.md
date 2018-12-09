@@ -4,17 +4,16 @@
 # RUN
 
 ## SERVER 
-### yarn server (nodemon) <<<
+### yarn server (nodemon) 
 #### yarn start (--production (node))
 
 # JSON-SERVER
-## json-server --watch db.json --port 2000 <<<
+## json-server --watch api.trkvault/db.json --port 2000 
 
 ## CLIENT
+#### cd client && yarn start
 ### yarn dev (runs concurrently)
-#### yarn client 
-#### cd client && yarn start (default) <<<
- 
+
 # ENDPOINTS 
 ### SERVER
 ## http://localhost:4000/graphql
